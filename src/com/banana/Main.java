@@ -1,19 +1,22 @@
 package com.banana;
 
+import com.banana.MatchMetaData.MatchInputManager;
+import com.banana.MatchMetaData.MatchStateManager;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-	    init();
+        init();
     }
 
     private static void init() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Initializing all services and objects");
-        System.out.println("What is your name?");
-        String name = sc.nextLine();
-        System.out.println("Fuck you, " + name + ".");
+
+        MatchInputManager.init();
+        MatchStateManager.init();
+        MatchStateManager.startMatch();
 
     }
 }
